@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parable Labs — AI-Native Firm</title>
+  <meta name="description" content="Parable Labs is an AI-native firm that helps organizations see beyond efficiency and into what AI actually makes possible — then builds it with them.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Parable Labs — AI-Native Firm">
+  <meta property="og:description" content="Efficiency is the least interesting thing AI can do.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://parablelabs.io">
+  <meta property="og:image" content="https://parablelabs.io/parable-labs-logo.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Parable Labs — AI-Native Firm">
+  <meta name="twitter:description" content="Efficiency is the least interesting thing AI can do.">
+
+  <link rel="icon" type="image/png" href="parable-labs-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --teal-dark: #3A5A64;
+      --teal-med: #78A0AA;
+      --bg: #FAFAF8;
+      --text: #1E1E1E;
+      --text-light: #5A5A5A;
+    }
+
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top accent bar */
+    body::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--teal-dark), var(--teal-med));
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
+
+    .hero img {
+      width: 280px;
+      max-width: 80%;
+      height: auto;
+      margin-bottom: 3rem;
+    }
+
+    .tagline {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--teal-dark);
+      letter-spacing: -0.02em;
+      animation: fadeIn 1.2s ease-out both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: var(--teal-med);
+      border: none;
+      margin: 4rem auto;
+    }
+
+    /* ── Statement ── */
+    .statement {
+      padding-bottom: 1rem;
+    }
+
+    .statement p {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .flywheel {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--teal-dark);
+      letter-spacing: 0.02em;
+    }
+
+    .flywheel span {
+      color: var(--teal-med);
+      margin: 0 0.15em;
+    }
+
+    /* ── Founder ── */
+    .founder {
+      padding-bottom: 1rem;
+    }
+
+    .founder h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--teal-med);
+      margin-bottom: 1.5rem;
+    }
+
+    .founder p {
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .founder .credentials {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    /* ── Signal ── */
+    .signal {
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    .signal p {
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--teal-dark);
+    }
+
+    /* ── Contact ── */
+    .contact {
+      padding: 2rem 0 5rem;
+      text-align: center;
+    }
+
+    .contact a {
+      color: var(--teal-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact a:hover {
+      color: var(--teal-med);
+    }
+
+    .contact .links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact .links a {
+      font-size: 1rem;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid transparent;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .contact .links a:hover {
+      border-bottom-color: var(--teal-med);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      border-top: 1px solid #e8e8e6;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 640px) {
+      html {
+        font-size: 16px;
+      }
+
+      .hero {
+        padding-top: 3rem;
+      }
+
+      .hero img {
+        width: 220px;
+        margin-bottom: 2rem;
+      }
+
+      .tagline {
+        font-size: 2rem;
+      }
+
+      .divider {
+        margin: 3rem auto;
+      }
+
+      .container {
+        padding: 0 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero container">
+    <img src="parable-labs-logo.png" alt="Parable Labs" width="280" height="84">
+    <h1 class="tagline">Efficiency is the least interesting thing AI can do.</h1>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Statement -->
+  <section class="statement container">
+    <p>Parable Labs is an AI-native firm that helps organizations see beyond the efficiency trap and into the transformational growth opportunity — new markets, new models, new ways of creating value that weren't possible before. Then we build it with them.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Founder -->
+  <section class="founder container">
+    <h2>Founder</h2>
+    <p><strong>Monifa Porter</strong> — Founder &amp; CEO</p>
+    <p>25 years in Silicon Valley across product strategy, venture building, and technology innovation — from PayPal to Stanford GSB to leading AI strategy for Global 1000 companies. Most organizations are stuck on the efficiency play. I'm driving what comes after — the new markets, new models, and new ways of creating value that AI makes possible for the first time.</p>
+  </section>
+
+  <hr class="divider">
+
+  <!-- Contact -->
+  <section class="contact container">
+    <div class="links">
+      <a href="mailto:monifa@parablelabs.io">monifa@parablelabs.io</a>
+      <a href="https://www.linkedin.com/company/parable-labs-io" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Parable Labs. Oakland, CA.
+    </div>
+  </footer>
+
+</body>
+</html>
