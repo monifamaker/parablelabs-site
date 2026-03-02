@@ -146,10 +146,54 @@
       line-height: 1.8;
       color: var(--sand);
       max-width: 580px;
-      margin: 0 auto;
+      margin: 0 auto 2.5rem;
       position: relative;
       z-index: 1;
       animation: fadeIn 1.2s ease-out 0.3s both;
+    }
+
+    .hero-ctas {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      animation: fadeIn 1.2s ease-out 0.5s both;
+    }
+
+    .hero-ctas a {
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .hero-ctas .btn-primary {
+      background: var(--seedling);
+      color: var(--soil);
+      border: 1.5px solid var(--seedling);
+    }
+
+    .hero-ctas .btn-primary:hover {
+      background: var(--seedling-light);
+      border-color: var(--seedling-light);
+    }
+
+    .hero-ctas .btn-secondary {
+      background: transparent;
+      color: var(--seedling);
+      border: 1.5px solid var(--seedling);
+    }
+
+    .hero-ctas .btn-secondary:hover {
+      background: var(--seedling);
+      color: var(--soil);
     }
 
     @keyframes fadeIn {
@@ -257,9 +301,46 @@
       margin: 2.5rem 0;
     }
 
+    /* ── CONSULTING SECTION ── */
+    .consulting-section {
+      background: var(--mycelium);
+      padding: 5rem 0;
+    }
+
+    .consulting-pillar {
+      margin-bottom: 2rem;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--seedling);
+    }
+
+    .consulting-pillar .pillar-title {
+      font-weight: 500;
+      color: var(--bone);
+      margin-bottom: 0.35rem;
+    }
+
+    .consulting-pillar p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--sand);
+    }
+
+    .consulting-cta {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--bark);
+    }
+
+    .consulting-cta p {
+      font-size: 1rem;
+      color: var(--sand);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
     /* ── COURSE SECTION ── */
     .course-section {
-      background: var(--mycelium);
+      background: var(--soil);
       padding: 6rem 0;
     }
 
@@ -332,14 +413,6 @@
       margin-top: 3rem;
     }
 
-    .course-audience h3 {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: 1.2rem;
-      color: var(--bone);
-      margin-bottom: 1.5rem;
-    }
-
     .course-audience p {
       font-size: 0.95rem;
       line-height: 1.75;
@@ -348,9 +421,7 @@
     }
 
     .course-timing {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--bark);
+      margin-top: 2rem;
     }
 
     .course-timing p {
@@ -395,6 +466,12 @@
       font-weight: 500;
       font-size: 1.5rem;
       color: var(--soil);
+      margin-bottom: 0.25rem;
+    }
+
+    .founder-role {
+      font-size: 0.88rem;
+      color: var(--clay);
       margin-bottom: 1.5rem;
     }
 
@@ -404,21 +481,7 @@
       margin-top: 1.5rem;
     }
 
-    /* ── ENTERPRISE SECTION ── */
-    .enterprise-section {
-      background: var(--soil);
-      padding: 4rem 0;
-      text-align: center;
-    }
-
-    .enterprise-section p {
-      font-size: 1.05rem;
-      color: var(--sand);
-      max-width: 520px;
-      margin: 0 auto 2rem;
-      line-height: 1.8;
-    }
-
+    /* ── SHARED BUTTON ── */
     .btn-talk {
       display: inline-block;
       font-family: var(--sans);
@@ -445,23 +508,6 @@
       background: var(--mycelium);
       padding: 4rem 0 3rem;
       text-align: center;
-    }
-
-    .footer-quote {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 300;
-      font-size: 1.15rem;
-      color: var(--sand);
-      margin-bottom: 0.5rem;
-    }
-
-    .footer-attribution {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      color: var(--bark);
-      margin-bottom: 3rem;
     }
 
     .footer-newsletter {
@@ -532,7 +578,8 @@
         padding: 3.5rem 0;
       }
 
-      .course-section {
+      .course-section,
+      .consulting-section {
         padding: 4rem 0;
       }
 
@@ -540,6 +587,16 @@
         padding: 0 1.25rem;
       }
 
+      .hero-ctas {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .hero-ctas a {
+        width: 80%;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -561,95 +618,127 @@
       </div>
       <div class="brand-name">Parable Labs</div>
       <h1>Efficiency is the least interesting thing AI can do.</h1>
-      <p class="subhead">Parable Labs helps leaders see the growth opportunity hiding beyond the efficiency play — and build it before someone else does.</p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       THE PROBLEM
-       ═══════════════════════════════════════════ -->
-  <section class="section-light problem-section">
-    <div class="container">
-      <div class="section-label">The problem you already feel</div>
-      <div class="body-text">
-        <p>Here's what nobody selling you AI tools will say out loud: most of what your organization does every day isn't work. It's <em>work-shaped work</em> — the 14-page reports, the approval chains, the meetings to coordinate people who no longer need coordinating at that scale.</p>
-
-        <div class="pull-quote">
-          You've glimpsed this yourself. You pulled something into an AI tool and did in ten minutes what used to take a week. That wasn't efficiency. That was a window into a completely different way of operating — and then you went back to your regular Tuesday.
-        </div>
-
-        <p>AI doesn't replace your people. It eliminates the organizational overhead that exists because humans needed it. Past tense. The gap between what AI can do and what your organization is doing with it isn't a technology problem. It's a leadership problem.</p>
+      <p class="subhead">Parable Labs partners with senior leaders to find the growth opportunity hiding beyond the efficiency play — and build it before someone else does.</p>
+      <div class="hero-ctas">
+        <a href="#consulting" class="btn-primary">Work With Us</a>
+        <a href="#course" class="btn-secondary">Leadership Intensive</a>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-       THE REFRAME
+       THE PROBLEM (compressed)
+       ═══════════════════════════════════════════ -->
+  <section class="section-light problem-section">
+    <div class="container">
+      <div class="section-label">You've already seen it</div>
+      <div class="body-text">
+        <p>You pulled something into an AI tool and did in ten minutes what used to take a week. That wasn't efficiency. That was a window into a completely different way of operating — and then you went back to your regular Tuesday.</p>
+
+        <div class="pull-quote">
+          That gap between what you glimpsed and what your organization is actually doing? It's not a technology problem. It's a leadership problem.
+        </div>
+
+        <p>Most of what your organization does every day isn't work — it's <em>work-shaped work</em>: the 14-page reports, the approval chains, the meetings to coordinate people who no longer need coordinating. AI doesn't replace your people. It eliminates the organizational overhead that existed because humans needed it. Past tense.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THE OPPORTUNITY (compressed)
        ═══════════════════════════════════════════ -->
   <section class="section-dark">
     <div class="container">
       <div class="section-label">The real opportunity</div>
       <div class="section-title">The real opportunity isn't doing the same things faster. It's building things that weren't possible before.</div>
       <div class="body-text">
-        <p>New markets. New models. New ways of creating value. The leaders who see this first will build it first. The ones who don't will spend the next three years "doing AI" without ever touching the actual opportunity.</p>
-
-        <p>Parable Labs is an AI-native firm — meaning we don't just advise on AI transformation, we run on it. The architecture, the workflows, the knowledge systems inside Parable Labs are the same ones we help our clients build. We partner with organizations from strategy through implementation. Not a deck. Not a workshop. Not a tools tutorial.</p>
+        <p>New markets. New models. New ways of creating value. The leaders who see this first will build it first.</p>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════════
-       THE COURSE (PRIMARY CTA)
+       CONSULTING (new dedicated section)
+       ═══════════════════════════════════════════ -->
+  <section class="consulting-section" id="consulting">
+    <div class="container">
+      <div class="section-label">Work with Parable Labs</div>
+      <div class="section-title">We don't advise from the outside. We partner from strategy through implementation.</div>
+      <div class="body-text">
+        <p>Parable Labs is an AI-native firm. The architecture, workflows, and knowledge systems we run on are the same ones we help our clients build.</p>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <div class="consulting-pillar">
+          <div class="pillar-title">See clearly.</div>
+          <p>We map your organization's real value creation against the overhead that coordinates it — and identify where AI unlocks entirely new capabilities, not just faster versions of old ones.</p>
+        </div>
+
+        <div class="consulting-pillar">
+          <div class="pillar-title">Build it.</div>
+          <p>We work alongside your team to design and implement AI-native workflows, knowledge systems, and operating models. Not a deck. Not a workshop. Working systems.</p>
+        </div>
+
+        <div class="consulting-pillar">
+          <div class="pillar-title">Lead it.</div>
+          <p>We develop your senior leaders' capacity to drive AI transformation themselves — so the change outlasts the engagement.</p>
+        </div>
+      </div>
+
+      <div class="consulting-cta">
+        <p>Parable Labs works with a small number of organizations at a time. If you're thinking about what AI transformation actually looks like — not a pitch, a real conversation — let's talk.</p>
+        <a href="mailto:monifa@parablelabs.io?subject=Let's%20talk%20about%20AI%20transformation" class="btn-talk">Schedule a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THE COURSE
        ═══════════════════════════════════════════ -->
   <section class="course-section" id="course">
     <div class="container">
       <div class="course-header">
-        <div class="section-label">A course for leaders</div>
+        <div class="section-label">Leadership intensive</div>
         <h2>The Art of the Possible</h2>
-        <p class="course-subtitle">A hands-on intensive for leaders who refuse to delegate their AI mastery to someone else.</p>
+        <p class="course-subtitle">A hands-on intensive for leaders who refuse to delegate their AI mastery.</p>
       </div>
 
       <div class="course-intro">
         <p>You know AI matters. You know you're behind. And you're not going to ask your IT department to fix it.</p>
 
-        <p>This course is for the senior leader who's glimpsed what's possible — and wants to close the gap between that glimpse and what their organization is actually doing.</p>
-
-        <p>This is not a tools tutorial. It's not a certification. It's not a webinar series with homework. It's the room where you finally get your hands on the thing everyone's been talking about — and discover that the real opportunity isn't efficiency. It's what becomes possible when you stop optimizing and start building.</p>
+        <p>This is a cohort-based intensive for senior leaders who want to close the gap between what they've glimpsed and what their organization is doing — personally, not by committee.</p>
       </div>
 
       <div class="course-outcomes">
-        <h3>What you'll walk away with</h3>
+        <h3>You'll walk away with</h3>
 
         <div class="course-outcome">
-          <div class="outcome-title">The ability to see the work beneath the work-shaped work.</div>
-          <p>Map your organization's real value creation against the overhead that exists to coordinate it. Most leaders have never done this honestly. It changes what you think AI is for.</p>
+          <div class="outcome-title">A map of the real work.</div>
+          <p>You'll separate your organization's actual value creation from the work-shaped work that surrounds it. Most leaders have never done this honestly. It changes what you think AI is for.</p>
         </div>
 
         <div class="course-outcome">
           <div class="outcome-title">A daily AI practice.</div>
-          <p>Not "prompt engineering." A practice — the way a surgeon has a practice, or an architect. You'll use AI as a thinking partner, a stress-tester, a builder.</p>
+          <p>Not prompt engineering — a practice. You'll use AI as a thinking partner, a stress-tester, a builder. The skill is integration, not mastery of any single tool.</p>
         </div>
 
         <div class="course-outcome">
           <div class="outcome-title">Cognitive sovereignty.</div>
-          <p>The most dangerous sentence in enterprise AI right now is "the AI just gets me." We teach you to recognize the sycophancy mirror — when the tool is flattering your thinking instead of sharpening it. This is the skill nobody else is teaching because it's bad for their business model.</p>
+          <p>The most dangerous sentence in enterprise AI is "the AI just gets me." You'll learn to recognize the sycophancy mirror — when the tool flatters your thinking instead of sharpening it. This is the skill nobody else teaches because it's bad for their business model.</p>
         </div>
 
         <div class="course-outcome">
           <div class="outcome-title">A transformation vision that's yours.</div>
-          <p>Not a certificate. A specific, grounded vision for what AI makes possible at your organization — beyond the efficiency play. You'll leave knowing what's next.</p>
+          <p>Not a certificate. A specific, grounded vision for what AI makes possible at your organization — beyond the efficiency play.</p>
         </div>
       </div>
 
       <div class="course-audience">
-        <h3>Who this is for</h3>
-        <p>Senior directors, VPs, C-suite, and founders who know they need to lead AI transformation personally — not delegate it to "the AI team." Leaders who've personally used AI enough to glimpse the potential, and feel the gap between that glimpse and what their organization is doing.</p>
-        <p>People who need to <strong>be</strong> the AI person in their organization, not hire one.</p>
+        <p><strong>Who this is for:</strong> Senior directors, VPs, C-suite, and founders who need to <strong>be</strong> the AI leader in their organization, not hire one.</p>
       </div>
 
       <div class="course-timing">
-        <p><strong>First cohort:</strong> Spring 2026. Cohort-based, small group, live and interactive.</p>
-        <p><strong>Led by:</strong> Monifa Porter — 25 years in Silicon Valley, Stanford GSB, and the person who built the AI architecture she teaches.</p>
+        <p><strong>First cohort:</strong> Spring 2026. Small group. Live and interactive.</p>
       </div>
 
       <!-- APPLICATION FORM -->
@@ -669,24 +758,14 @@
     <div class="container">
       <div class="section-label">Who's behind this</div>
       <div class="founder-name">Monifa Porter</div>
+      <div class="founder-role">Founder & CEO</div>
       <div class="body-text">
-        <p>I've spent 25+ years in Silicon Valley across product strategy, venture building, and technology innovation — from PayPal to Opower, Adchemy, and most recently Mach49, where I led venture building and AI strategy for Global 1000 companies including PG&E. I guest lecture on Product Management at Stanford GSB, where I earned my MBA.</p>
+        <p>25+ years in Silicon Valley across product strategy, venture building, and technology innovation — from PayPal to Opower to Mach49, where I led venture building and AI strategy for Global 1000 companies. Guest lecturer on Product Management at Stanford GSB, where I earned my MBA. I hold an NLP patent from my work at Adchemy.</p>
 
-        <p>I built Parable Labs as an AI-native firm because I got tired of watching organizations buy AI strategies from people who don't use AI to run their own businesses. The architecture, the workflows, the knowledge systems inside Parable Labs are the same ones I help clients build. I built the thing I teach.</p>
+        <p>I built Parable Labs as an AI-native firm because I got tired of watching organizations buy AI strategies from people who don't use AI to run their own businesses. I built the thing I teach.</p>
 
-        <p>The question I keep coming back to is cognitive sovereignty — making sure AI amplifies human judgment instead of replacing it. As these systems get more powerful, the practice of staying in your own knowing becomes more important, not less.</p>
+        <p>The question I keep coming back to: how do we make sure AI amplifies human judgment instead of replacing it?</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════════
-       ENTERPRISE
-       ═══════════════════════════════════════════ -->
-  <section class="enterprise-section">
-    <div class="container">
-      <div class="section-label">For organizations</div>
-      <p>If you're thinking about what AI transformation looks like across your team or organization, let's have a conversation about what's possible — not a pitch.</p>
-      <a href="mailto:monifa@parablelabs.io?subject=Let's%20talk%20about%20AI%20transformation" class="btn-talk">Let's Talk</a>
     </div>
   </section>
 
