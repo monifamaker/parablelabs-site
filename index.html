@@ -18,10 +18,10 @@
   <meta name="twitter:title" content="Parable Labs — AI-Native Firm">
   <meta name="twitter:description" content="Efficiency is the least interesting thing AI can do.">
 
-  <link rel="icon" type="image/png" href="parable-labs-logo.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
     *, *::before, *::after {
@@ -31,11 +31,21 @@
     }
 
     :root {
-      --teal-dark: #3A5A64;
-      --teal-med: #78A0AA;
-      --bg: #FAFAF8;
-      --text: #1E1E1E;
-      --text-light: #5A5A5A;
+      --soil: #1a1612;
+      --mycelium: #2d2822;
+      --bark: #4a3f35;
+      --clay: #8b7355;
+      --sand: #c4a882;
+      --bone: #e8ddd0;
+      --milk: #f5f0e8;
+      --seedling: #5a8a5c;
+      --seedling-light: #7db87f;
+      --amber: #c4883a;
+      --signal: #6b8ea8;
+
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
     }
 
     html {
@@ -44,9 +54,9 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: var(--sans);
+      background-color: var(--soil);
+      color: var(--bone);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
@@ -56,231 +66,650 @@
       content: '';
       display: block;
       width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--teal-dark), var(--teal-med));
+      height: 3px;
+      background: linear-gradient(90deg, var(--seedling), var(--seedling-light), var(--seedling));
     }
 
     .container {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 0 2rem;
     }
 
-    /* ── Hero ── */
+    /* ── HERO ── */
     .hero {
-      padding-top: 5rem;
-      padding-bottom: 2rem;
+      padding: 6rem 0 5rem;
       text-align: center;
+      background: var(--soil);
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero img {
-      width: 280px;
-      max-width: 80%;
-      height: auto;
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(90,138,92,0.04) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero .spiral-mark {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .spiral-mark svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero .brand-name {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 0.85rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--sand);
       margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
     }
 
-    .tagline {
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--teal-dark);
-      letter-spacing: -0.02em;
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--bone);
+      max-width: 680px;
+      margin: 0 auto 2rem;
+      position: relative;
+      z-index: 1;
       animation: fadeIn 1.2s ease-out both;
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ── Divider ── */
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: var(--teal-med);
-      border: none;
-      margin: 4rem auto;
-    }
-
-    /* ── Statement ── */
-    .statement {
-      padding-bottom: 1rem;
-    }
-
-    .statement p {
-      font-size: 1.25rem;
+    .hero .subhead {
+      font-family: var(--sans);
       font-weight: 300;
-      color: var(--text);
-      margin-bottom: 1.5rem;
-    }
-
-    .flywheel {
       font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--teal-dark);
-      letter-spacing: 0.02em;
+      line-height: 1.8;
+      color: var(--sand);
+      max-width: 580px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      animation: fadeIn 1.2s ease-out 0.3s both;
     }
 
-    .flywheel span {
-      color: var(--teal-med);
-      margin: 0 0.15em;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ── Founder ── */
-    .founder {
-      padding-bottom: 1rem;
+    /* ── DIVIDERS ── */
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--seedling);
+      border: none;
+      margin: 0 auto;
+      opacity: 0.6;
     }
 
-    .founder h2 {
-      font-size: 1rem;
-      font-weight: 600;
+    /* ── DARK SECTIONS ── */
+    .section-dark {
+      background: var(--soil);
+      padding: 5rem 0;
+    }
+
+    /* ── LIGHT SECTIONS ── */
+    .section-light {
+      background: var(--milk);
+      padding: 5rem 0;
+    }
+
+    .section-light .container {
+      color: var(--soil);
+    }
+
+    .section-light p {
+      color: var(--bark);
+    }
+
+    .section-light strong {
+      color: var(--soil);
+    }
+
+    /* ── SECTION TYPOGRAPHY ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--teal-med);
+      color: var(--seedling);
+      margin-bottom: 2rem;
+    }
+
+    .section-light .section-label {
+      color: var(--seedling);
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      line-height: 1.3;
+      margin-bottom: 2rem;
+    }
+
+    .section-light .section-title {
+      color: var(--soil);
+    }
+
+    /* ── BODY TEXT ── */
+    .body-text {
+      font-size: 1rem;
+      line-height: 1.85;
+      color: var(--sand);
+    }
+
+    .body-text p {
       margin-bottom: 1.5rem;
     }
 
-    .founder p {
-      margin-bottom: 1.25rem;
-      color: var(--text);
+    .body-text p:last-child {
+      margin-bottom: 0;
     }
 
-    .founder .credentials {
-      font-size: 0.95rem;
-      color: var(--text-light);
+    .section-light .body-text {
+      color: var(--bark);
     }
 
-    /* ── Signal ── */
-    .signal {
-      padding: 2.5rem 0;
-      text-align: center;
-    }
-
-    .signal p {
-      font-size: 1.15rem;
+    .body-text em {
       font-style: italic;
-      color: var(--teal-dark);
+      color: var(--bone);
     }
 
-    /* ── Contact ── */
-    .contact {
-      padding: 2rem 0 5rem;
+    .section-light .body-text em {
+      color: var(--soil);
+    }
+
+    /* ── PROBLEM SECTION ── */
+    .problem-section .pull-quote {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.35rem;
+      line-height: 1.6;
+      color: var(--soil);
+      border-left: 3px solid var(--seedling);
+      padding-left: 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    /* ── COURSE SECTION ── */
+    .course-section {
+      background: var(--mycelium);
+      padding: 6rem 0;
+    }
+
+    .course-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .course-header .section-label {
+      margin-bottom: 1rem;
+    }
+
+    .course-header h2 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      line-height: 1.25;
+      color: var(--bone);
+      margin-bottom: 1rem;
+    }
+
+    .course-header .course-subtitle {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 1rem;
+      color: var(--sand);
+      max-width: 540px;
+      margin: 0 auto;
+      font-style: italic;
+    }
+
+    .course-intro {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--sand);
+      margin-bottom: 3rem;
+    }
+
+    .course-intro p {
+      margin-bottom: 1.5rem;
+    }
+
+    .course-outcomes h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--bone);
+      margin-bottom: 2rem;
+    }
+
+    .course-outcome {
+      margin-bottom: 2rem;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--seedling);
+    }
+
+    .course-outcome .outcome-title {
+      font-weight: 500;
+      color: var(--bone);
+      margin-bottom: 0.35rem;
+    }
+
+    .course-outcome p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--sand);
+    }
+
+    .course-audience {
+      margin-top: 3rem;
+    }
+
+    .course-audience h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.2rem;
+      color: var(--bone);
+      margin-bottom: 1.5rem;
+    }
+
+    .course-audience p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--sand);
+      margin-bottom: 1rem;
+    }
+
+    .course-timing {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--bark);
+    }
+
+    .course-timing p {
+      font-size: 0.95rem;
+      color: var(--sand);
+      margin-bottom: 0.5rem;
+    }
+
+    .course-timing strong {
+      color: var(--bone);
+    }
+
+    /* ── APPLICATION FORM ── */
+    .apply-section {
+      margin-top: 3.5rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--bark);
+    }
+
+    .apply-section h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.3rem;
+      color: var(--bone);
+      margin-bottom: 0.5rem;
+    }
+
+    .apply-section .apply-note {
+      font-size: 0.88rem;
+      color: var(--clay);
+      margin-bottom: 2rem;
+    }
+
+    .apply-section iframe {
+      margin-top: 0.5rem;
+      border-radius: 8px;
+    }
+
+    /* ── FOUNDER SECTION ── */
+    .founder-name {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.5rem;
+      color: var(--soil);
+      margin-bottom: 1.5rem;
+    }
+
+    .founder-cred {
+      font-size: 0.9rem;
+      color: var(--clay);
+      margin-top: 1.5rem;
+    }
+
+    /* ── ENTERPRISE SECTION ── */
+    .enterprise-section {
+      background: var(--soil);
+      padding: 4rem 0;
       text-align: center;
     }
 
-    .contact a {
-      color: var(--teal-dark);
+    .enterprise-section p {
+      font-size: 1.05rem;
+      color: var(--sand);
+      max-width: 520px;
+      margin: 0 auto 2rem;
+      line-height: 1.8;
+    }
+
+    .btn-talk {
+      display: inline-block;
+      font-family: var(--sans);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--seedling);
+      border: 1.5px solid var(--seedling);
+      background: transparent;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
       text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
+      transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .contact a:hover {
-      color: var(--teal-med);
+    .btn-talk:hover {
+      background: var(--seedling);
+      color: var(--soil);
     }
 
-    .contact .links {
+    /* ── FOOTER ── */
+    footer {
+      background: var(--mycelium);
+      padding: 4rem 0 3rem;
+      text-align: center;
+    }
+
+    .footer-quote {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1.15rem;
+      color: var(--sand);
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-attribution {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--bark);
+      margin-bottom: 3rem;
+    }
+
+    .footer-newsletter {
+      max-width: 440px;
+      margin: 0 auto 3rem;
+    }
+
+    .footer-newsletter p {
+      font-size: 0.88rem;
+      color: var(--clay);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+
+    .footer-newsletter iframe {
+      border-radius: 8px;
+    }
+
+    .footer-links {
       display: flex;
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
 
-    .contact .links a {
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      border-bottom: 2px solid transparent;
-      transition: color 0.3s ease, border-color 0.3s ease;
+    .footer-links a {
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      color: var(--sand);
+      text-decoration: none;
+      transition: color 0.3s ease;
     }
 
-    .contact .links a:hover {
-      border-bottom-color: var(--teal-med);
+    .footer-links a:hover {
+      color: var(--seedling-light);
     }
 
-    /* ── Footer ── */
-    footer {
-      padding: 2rem 0;
-      text-align: center;
-      font-size: 0.8rem;
-      color: var(--text-light);
-      border-top: 1px solid #e8e8e6;
+    .footer-copy {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--bark);
     }
 
-    /* ── Mobile ── */
+    /* ── MOBILE ── */
     @media (max-width: 640px) {
       html {
         font-size: 16px;
       }
 
       .hero {
-        padding-top: 3rem;
+        padding: 4rem 0 3.5rem;
       }
 
-      .hero img {
-        width: 220px;
+      .hero .spiral-mark {
+        width: 48px;
+        height: 48px;
+      }
+
+      .hero .brand-name {
+        font-size: 0.75rem;
         margin-bottom: 2rem;
       }
 
-      .tagline {
-        font-size: 2rem;
+      .section-dark,
+      .section-light {
+        padding: 3.5rem 0;
       }
 
-      .divider {
-        margin: 3rem auto;
+      .course-section {
+        padding: 4rem 0;
       }
 
       .container {
         padding: 0 1.25rem;
       }
+
     }
   </style>
 </head>
 <body>
 
-  <!-- Hero -->
-  <section class="hero container">
-    <img src="parable-labs-logo.png" alt="Parable Labs" width="280" height="84">
-    <h1 class="tagline">Efficiency is the least interesting thing AI can do.</h1>
-  </section>
-
-  <hr class="divider">
-
-  <!-- Statement -->
-  <section class="statement container">
-    <p>Parable Labs is an AI-native firm that helps organizations see beyond the efficiency trap and into the transformational growth opportunity — new markets, new models, new ways of creating value that weren't possible before. Then we build it with them.</p>
-  </section>
-
-  <hr class="divider">
-
-  <!-- Founder -->
-  <section class="founder container">
-    <h2>Founder</h2>
-    <p><strong>Monifa Porter</strong> — Founder &amp; CEO</p>
-    <p>25 years in Silicon Valley across product strategy, venture building, and technology innovation — from PayPal to Stanford GSB to leading AI strategy for Global 1000 companies. Most organizations are stuck on the efficiency play. I'm driving what comes after — the new markets, new models, and new ways of creating value that AI makes possible for the first time.</p>
-  </section>
-
-  <hr class="divider">
-
-  <!-- Contact -->
-  <section class="contact container">
-    <div class="links">
-      <a href="mailto:monifa@parablelabs.io">monifa@parablelabs.io</a>
-      <a href="https://www.linkedin.com/company/parable-labs-io" target="_blank" rel="noopener">LinkedIn</a>
+  <!-- ═══════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <div class="spiral-mark">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 60 C60 48, 72 36, 84 36 C96 36, 108 48, 108 60 C108 84, 84 108, 60 108 C24 108, 0 84, 0 48 C0 12, 36 -12, 72 -12"
+                stroke="#5a8a5c" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.9"/>
+          <path d="M60 60 C60 54, 66 48, 72 48 C78 48, 84 54, 84 60 C84 72, 72 84, 60 84 C42 84, 24 66, 24 48 C24 24, 48 6, 72 6"
+                stroke="#7db87f" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <circle cx="60" cy="60" r="3" fill="#5a8a5c"/>
+        </svg>
+      </div>
+      <div class="brand-name">Parable Labs</div>
+      <h1>Efficiency is the least interesting thing AI can do.</h1>
+      <p class="subhead">Parable Labs helps leaders see the transformation opportunity hiding behind the efficiency pitch — and build it before someone else does.</p>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════
+       THE PROBLEM
+       ═══════════════════════════════════════════ -->
+  <section class="section-light problem-section">
+    <div class="container">
+      <div class="section-label">The problem you already feel</div>
+      <div class="body-text">
+        <p>You've seen the demos. You've sat through the vendor pitches. Your team is using ChatGPT for email drafts and calling it transformation.</p>
+
+        <div class="pull-quote">
+          You pulled a CSV into Claude last week and did in ten minutes what used to take a team a week. Now you're wondering: what else don't I know?
+        </div>
+
+        <p>That instinct is correct. The gap between what AI can do and what your organization is doing with it isn't a technology problem. It's a leadership problem.</p>
+
+        <p>And here's what nobody selling you AI tools will say out loud: most of what your organization does every day isn't work. It's <em>work-shaped work</em> — the 14-page reports, the approval chains, the meetings to coordinate people who no longer need coordinating at that scale. AI doesn't replace your people. It eliminates the organizational overhead that exists because humans needed it. They needed it. Past tense.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THE REFRAME
+       ═══════════════════════════════════════════ -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="section-label">The real opportunity</div>
+      <div class="section-title">The real opportunity isn't doing the same things faster. It's building things that weren't possible before.</div>
+      <div class="body-text">
+        <p>New markets. New models. New ways of creating value. The leaders who see this first will build it first. The ones who don't will spend the next three years "doing AI" without ever touching the actual opportunity.</p>
+
+        <p>Parable Labs is an AI-native firm — meaning we don't just advise on AI transformation, we run on it. The architecture, the workflows, the knowledge systems inside Parable Labs are the same ones we help our clients build. We partner with organizations from strategy through implementation. Not a deck. Not a workshop. Not a tools tutorial.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       THE COURSE (PRIMARY CTA)
+       ═══════════════════════════════════════════ -->
+  <section class="course-section" id="course">
+    <div class="container">
+      <div class="course-header">
+        <div class="section-label">A course for leaders</div>
+        <h2>The Art of the Possible</h2>
+        <p class="course-subtitle">A hands-on intensive for leaders who refuse to delegate their AI mastery to someone else.</p>
+      </div>
+
+      <div class="course-intro">
+        <p>You know AI matters. You know you're behind. And you're not going to ask your IT department to fix it.</p>
+
+        <p>This course is for the senior leader who's glimpsed what's possible — and wants to close the gap between that glimpse and what their organization is actually doing.</p>
+
+        <p>This is not a tools tutorial. It's not a certification. It's not a webinar series with homework. It's the room where you finally get your hands on the thing everyone's been talking about — and discover that the real opportunity isn't efficiency. It's what becomes possible when you stop optimizing and start building.</p>
+      </div>
+
+      <div class="course-outcomes">
+        <h3>What you'll walk away with</h3>
+
+        <div class="course-outcome">
+          <div class="outcome-title">The ability to see the work beneath the work-shaped work.</div>
+          <p>Map your organization's real value creation against the overhead that exists to coordinate it. Most leaders have never done this honestly. It changes what you think AI is for.</p>
+        </div>
+
+        <div class="course-outcome">
+          <div class="outcome-title">A daily AI practice.</div>
+          <p>Not "prompt engineering." A practice — the way a surgeon has a practice, or an architect. You'll use AI as a thinking partner, a stress-tester, a builder.</p>
+        </div>
+
+        <div class="course-outcome">
+          <div class="outcome-title">Cognitive sovereignty.</div>
+          <p>The most dangerous sentence in enterprise AI right now is "the AI just gets me." We teach you to recognize the sycophancy mirror — when the tool is flattering your thinking instead of sharpening it. This is the skill nobody else is teaching because it's bad for their business model.</p>
+        </div>
+
+        <div class="course-outcome">
+          <div class="outcome-title">A transformation vision that's yours.</div>
+          <p>Not a certificate. A specific, grounded vision for what AI makes possible at your organization — beyond the efficiency play. You'll leave knowing what's next.</p>
+        </div>
+      </div>
+
+      <div class="course-audience">
+        <h3>Who this is for</h3>
+        <p>Senior directors, VPs, C-suite, and founders who know they need to lead AI transformation personally — not delegate it to "the AI team." Leaders who've personally used AI enough to glimpse the potential, and feel the gap between that glimpse and what their organization is doing.</p>
+        <p>People who need to <strong>be</strong> the AI person in their organization, not hire one.</p>
+      </div>
+
+      <div class="course-timing">
+        <p><strong>First cohort:</strong> Spring 2026. Cohort-based, small group, live and interactive.</p>
+        <p><strong>Led by:</strong> Monifa Porter — 25 years in Silicon Valley, Stanford GSB, and the person who built the AI architecture she teaches.</p>
+      </div>
+
+      <!-- APPLICATION FORM -->
+      <div class="apply-section" id="apply">
+        <h3>Apply for the First Cohort</h3>
+        <p class="apply-note">Applications reviewed on a rolling basis. We'll be in touch within a week.</p>
+
+        <iframe data-tally-src="https://tally.so/embed/81dMNo?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="704" frameborder="0" marginheight="0" marginwidth="0" title="Course Application"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOUNDER
+       ═══════════════════════════════════════════ -->
+  <section class="section-light">
+    <div class="container">
+      <div class="section-label">Who's behind this</div>
+      <div class="founder-name">Monifa Porter</div>
+      <div class="body-text">
+        <p>I've spent 25+ years in Silicon Valley across product strategy, venture building, and technology innovation — from PayPal to Opower, Adchemy, and most recently Mach49, where I led venture building and AI strategy for Global 1000 companies including PG&E. I guest lecture on Product Management at Stanford GSB, where I earned my MBA.</p>
+
+        <p>I built Parable Labs as an AI-native firm because I got tired of watching organizations buy AI strategies from people who don't use AI to run their own businesses. The architecture, the workflows, the knowledge systems inside Parable Labs are the same ones I help clients build. I built the thing I teach.</p>
+
+        <p>The question I keep coming back to is cognitive sovereignty — making sure AI amplifies human judgment instead of replacing it. As these systems get more powerful, the practice of staying in your own knowing becomes more important, not less.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       ENTERPRISE
+       ═══════════════════════════════════════════ -->
+  <section class="enterprise-section">
+    <div class="container">
+      <div class="section-label">For organizations</div>
+      <p>If you're thinking about what AI transformation looks like across your team or organization, let's have a conversation about what's possible — not a pitch.</p>
+      <a href="mailto:monifa@parablelabs.io?subject=Let's%20talk%20about%20AI%20transformation" class="btn-talk">Let's Talk</a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════ -->
   <footer>
     <div class="container">
-      &copy; 2026 Parable Labs. Oakland, CA.
+      <div class="footer-newsletter">
+        <p>A short letter on AI, sovereignty, and what's actually happening — when there's something worth saying.</p>
+        <iframe data-tally-src="https://tally.so/embed/rjlvPo?alignLeft=1&hideTitle=1&dynamicHeight=1" loading="lazy" width="100%" height="211" frameborder="0" marginheight="0" marginwidth="0" title="Newsletter Signup"></iframe>
+      </div>
+
+      <div class="footer-links">
+        <a href="mailto:monifa@parablelabs.io">monifa@parablelabs.io</a>
+        <a href="https://www.linkedin.com/company/parable-labs-io" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="footer-copy">&copy; 2026 Parable Labs. Oakland, CA.</div>
     </div>
   </footer>
+
+  <!-- Tally embed loader -->
+  <script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
 
 </body>
 </html>
