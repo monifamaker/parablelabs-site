@@ -159,16 +159,18 @@
       display: inline-block;
       padding: 1rem 2.5rem;
       border: 1px solid var(--emergence);
-      color: var(--emergence);
+      background: var(--emergence);
+      color: var(--soil);
       text-decoration: none;
       font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      border-radius: 50px;
       transition: all 0.3s;
     }
-    .btn:hover { background: var(--emergence); color: var(--soil); }
-    .btn-secondary { border-color: var(--sand); color: var(--sand); margin-left: 1rem; }
-    .btn-secondary:hover { background: var(--sand); color: var(--soil); }
+    .btn:hover { background: var(--emergence-deep); border-color: var(--emergence-deep); color: var(--milk); }
+    .btn-secondary { border-color: var(--sand); background: transparent; color: var(--sand); margin-left: 1rem; }
+    .btn-secondary:hover { background: var(--sand); border-color: var(--sand); color: var(--soil); }
 
     /* ── SECTIONS ── */
     .section-light {
@@ -348,17 +350,18 @@
     .contact-form textarea { height: 130px; resize: vertical; }
     .contact-form button {
       padding: 1rem 2.5rem;
-      background: transparent;
+      background: var(--emergence);
       border: 1px solid var(--emergence);
-      color: var(--emergence);
+      color: var(--soil);
       font-family: var(--sans);
       font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
+      border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s;
     }
-    .contact-form button:hover { background: var(--emergence); color: var(--soil); }
+    .contact-form button:hover { background: var(--emergence-deep); border-color: var(--emergence-deep); color: var(--milk); }
 
     /* ── NEWSLETTER ── */
     .newsletter {
