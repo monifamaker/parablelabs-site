@@ -1,0 +1,5 @@
+.gstack/
+*.png
+!parable-labs-logo.png
+!og-image.png
+!favicon.svg
