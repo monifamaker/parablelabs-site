@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Resources — Art of the Possible — Parable Labs</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --soil: #1a1612;
+      --mycelium: #2d2822;
+      --bark: #4a3f35;
+      --clay: #8b7355;
+      --sand: #c4a882;
+      --bone: #e8ddd0;
+      --milk: #f5f0e8;
+      --emergence: #6ECB73;
+      --emergence-deep: #3a7a3e;
+      --emergence-dim: rgba(110,203,115,0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    html { font-size: 18px; scroll-behavior: smooth; scroll-padding-top: 5rem; }
+    body {
+      font-family: var(--sans);
+      background: var(--soil);
+      color: var(--bone);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(26,22,18,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(74,63,53,0.3);
+    }
+    nav .logo {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    nav .links { display: flex; gap: 2.5rem; }
+    nav .links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bone);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav .links a:hover { color: var(--emergence); }
+
+    /* Header */
+    .page-header {
+      padding: 7rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--bark);
+    }
+    .page-header .label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emergence);
+      margin-bottom: 1rem;
+    }
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--milk);
+      margin-bottom: 0.5rem;
+    }
+    .page-header .sub {
+      color: var(--sand);
+      font-size: 0.95rem;
+    }
+
+    /* Sections */
+    .section { padding: 4rem 2rem; }
+    .section-alt { background: var(--mycelium); }
+    .inner { max-width: 780px; margin: 0 auto; }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--milk);
+      margin-bottom: 0.5rem;
+    }
+    .section-desc {
+      color: var(--sand);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Guide card */
+    .guide-card {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      background: var(--emergence-dim);
+      border: 1px solid var(--emergence-deep);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      transition: border-color 0.3s;
+    }
+    .guide-card:hover { border-color: var(--emergence); }
+    .guide-card .icon {
+      font-size: 2.5rem;
+      min-width: 3.5rem;
+      text-align: center;
+    }
+    .guide-card h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--milk);
+      margin-bottom: 0.3rem;
+    }
+    .guide-card p {
+      font-size: 0.88rem;
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+    }
+    .guide-card a {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--emergence);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .guide-card a:hover { color: var(--milk); }
+
+    /* Explainer grid */
+    .explainer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .explainer-item {
+      display: block;
+      padding: 1.25rem 1.5rem;
+      background: var(--mycelium);
+      border: 1px solid var(--bark);
+      border-radius: 8px;
+      text-decoration: none;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .section-alt .explainer-item { background: var(--soil); }
+    .explainer-item:hover { border-color: var(--emergence); background: rgba(110,203,115,0.05); }
+    .explainer-item .num {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--emergence);
+      margin-bottom: 0.4rem;
+    }
+    .explainer-item h4 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--milk);
+      margin-bottom: 0.3rem;
+    }
+    .explainer-item p {
+      font-size: 0.8rem;
+      color: var(--clay);
+      line-height: 1.5;
+    }
+
+    /* Prompts */
+    .prompt-block {
+      margin-bottom: 2rem;
+    }
+    .prompt-block h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--milk);
+      margin-bottom: 0.5rem;
+    }
+    .prompt-block .desc {
+      font-size: 0.85rem;
+      color: var(--sand);
+      margin-bottom: 0.75rem;
+      font-style: italic;
+    }
+    .prompt-code {
+      background: var(--mycelium);
+      border-left: 3px solid var(--emergence);
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--bone);
+      line-height: 1.65;
+      white-space: pre-wrap;
+      position: relative;
+    }
+    .section-alt .prompt-code { background: var(--soil); }
+    .copy-btn {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: var(--bark);
+      border: none;
+      color: var(--sand);
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      cursor: pointer;
+      letter-spacing: 0.08em;
+      transition: background 0.3s;
+    }
+    .copy-btn:hover { background: var(--emergence-deep); color: var(--milk); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--bark);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--clay);
+      letter-spacing: 0.1em;
+    }
+    footer a { color: var(--sand); text-decoration: none; }
+    footer a:hover { color: var(--emergence); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .page-header h1 { font-size: 2rem; }
+      .page-header { padding: 6rem 1.5rem 2rem; }
+      .explainer-grid { grid-template-columns: 1fr; }
+      .guide-card { flex-direction: column; text-align: center; gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true" style="height:28px;width:28px;flex-shrink:0;vertical-align:middle;margin-right:0.5rem"><path d="M60 60 C60 48,72 36,84 36 C96 36,108 48,108 60 C108 84,84 108,60 108 C24 108,0 84,0 48 C0 12,36 -12,72 -12" stroke="#6ECB73" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9"/><path d="M60 60 C60 54,66 48,72 48 C78 48,84 54,84 60 C84 72,72 84,60 84 C42 84,24 66,24 48 C24 24,48 6,72 6" stroke="#6ECB73" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/><circle cx="60" cy="60" r="6.5" fill="#6ECB73"/></svg>Parable Labs</a>
+  <div class="links">
+    <a href="#guide">Guide</a>
+    <a href="#explainers">Explainers</a>
+    <a href="#prompts">Prompts</a>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="label">Art of the Possible</div>
+  <h1>Course Resources</h1>
+  <p class="sub">Everything from the sessions. Every prompt is copy-paste ready.</p>
+</header>
+
+<!-- WHY THIS MATTERS -->
+<section class="section" id="why">
+  <div class="inner">
+    <div class="section-title">Why This Matters</div>
+    <p>The decisions AI changes — what to build, what to kill, where to grow — are yours. They require your judgment, your discernment, your knowledge of the business. You cannot delegate them to people who don't carry that context. And you cannot lead a transformation you don't understand with your own hands.</p>
+    <p>This course puts your hands on the wheel. Not theory. Not a vendor demo. You build a working AI system on your own computer, with your own files, aimed at your own work — and you walk away knowing what's possible because you've done it.</p>
+    <p>Five layers. Each one grows from the one before it. From context to compound intelligence.</p>
+  </div>
+</section>
+
+<!-- GUIDE -->
+<section class="section section-alt" id="guide">
+  <div class="inner">
+    <div class="section-title">The Complete Guide</div>
+    <p class="section-desc">All five layers, step by step.</p>
+    <div class="guide-card">
+      <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="#6ECB73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="40" height="40"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></div>
+      <div>
+        <h3>Growth and Context</h3>
+        <p>The full participant's guide. All five layers, every prompt copy-paste ready, step-by-step instructions with screenshots. 14 pages.</p>
+        <a href="assets/growth-and-context-parable-labs.pdf" target="_blank">Download PDF ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPLAINERS -->
+<section class="section section-alt" id="explainers">
+  <div class="inner">
+    <div class="section-title">Explainer Guides</div>
+    <p class="section-desc">Deep dives on specific topics. Each one stands alone.</p>
+    <div class="explainer-grid">
+      <a href="assets/01-three-claudes-chat-do-build.pdf" target="_blank" class="explainer-item">
+        <div class="num">01</div>
+        <h4>The Three Claudes</h4>
+        <p>Chat vs. Cowork vs. Code. Where each lives, what each does, when to use which.</p>
+      </a>
+      <a href="assets/02-data-security-what-stays-on-your-computer.pdf" target="_blank" class="explainer-item">
+        <div class="num">02</div>
+        <h4>Data Security</h4>
+        <p>What stays on your computer. Privacy model, local processing, what goes to the cloud.</p>
+      </a>
+      <a href="assets/03-pre-flight-checklist.pdf" target="_blank" class="explainer-item">
+        <div class="num">03</div>
+        <h4>Pre-Flight Checklist</h4>
+        <p>Six diagnostic questions before your first session. Where do your files live? What computer are you on?</p>
+      </a>
+      <a href="assets/04-troubleshooting-cowork-setup.pdf" target="_blank" class="explainer-item">
+        <div class="num">04</div>
+        <h4>Troubleshooting</h4>
+        <p>Every problem we've seen in live sessions, plus the ones we know are coming. Searchable.</p>
+      </a>
+      <a href="assets/05-scheduled-tasks-setup.pdf" target="_blank" class="explainer-item">
+        <div class="num">05</div>
+        <h4>Scheduled Tasks</h4>
+        <p>Monday briefings, email digests, meeting prep. How to make Claude work while you sleep.</p>
+      </a>
+      <a href="assets/06-connectors-plugins-skills-taxonomy.pdf" target="_blank" class="explainer-item">
+        <div class="num">06</div>
+        <h4>Connectors &amp; Skills</h4>
+        <p>Gmail, Calendar, Drive, Slack, Figma. What connects, how it connects, what the difference is.</p>
+      </a>
+      <a href="assets/07-google-drive-cowork-integration.pdf" target="_blank" class="explainer-item">
+        <div class="num">07</div>
+        <h4>Google Drive Integration</h4>
+        <p>Mounting Drive locally, folder structure, working with Google-native files.</p>
+      </a>
+      <a href="assets/08-powerpoint-capabilities.pdf" target="_blank" class="explainer-item">
+        <div class="num">08</div>
+        <h4>PowerPoint Capabilities</h4>
+        <p>What Claude can and can't do with presentations. Create, edit, and the HTML alternative.</p>
+      </a>
+      <a href="assets/09-multi-instance-management.pdf" target="_blank" class="explainer-item">
+        <div class="num">09</div>
+        <h4>Multi-Instance Management</h4>
+        <p>Managing multiple Claude accounts for multi-client consultants. Switching strategies.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PROMPTS -->
+<section class="section" id="prompts">
+  <div class="inner">
+    <div class="section-title">All 8 Prompts</div>
+    <p class="section-desc">Copy-paste ready. In order. Each one builds on the last.</p>
+
+    <div class="prompt-block">
+      <h3>① Create Workspace</h3>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>Create a new folder on my Desktop called Claude-Work. Inside it, create four subfolders:
+- ABOUT ME
+- PROJECTS
+- TEMPLATES
+- OUTPUTS
+
+Tell me when it's done.</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>② Organize Your Files</h3>
+      <div class="desc">Drop 5-10 real work files into PROJECTS first.</div>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>Look at everything in my PROJECTS folder. Organize the files:
+- Group related files into subfolders by project or topic
+- Rename anything that's unclear
+- Give me a summary of what you found and how you organized it</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>③ Generate About Me</h3>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>Based on everything you just read in my PROJECTS folder, write an About Me file about me. Include:
+
+- Who I am and what I do
+- Who my audience or stakeholders are
+- What I'm working on right now
+- How I like to communicate
+- What success looks like in my work
+
+Write it like you're briefing a new colleague on day one — not a resume, a working briefing. Save it to my ABOUT ME folder as about-me.md.
+
+Then tell me: what did you get wrong? What are you uncertain about? I'll correct you.</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>④ Global Instructions</h3>
+      <div class="desc">Paste into Settings → Cowork → Global Instructions.</div>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button># GLOBAL INSTRUCTIONS
+
+## BEFORE EVERY TASK
+1. Read my ABOUT ME folder first. No task starts without understanding who I am.
+2. If the task relates to a project, read everything in the matching PROJECTS subfolder before proceeding.
+3. If the task involves a format that has a matching template in TEMPLATES, study that template's structure first.
+
+## FOLDER RULES
+- ABOUT ME, TEMPLATES, PROJECTS → read-only. Never create, edit, or delete anything here.
+- OUTPUTS → the only place you create files. One subfolder per project.
+
+## HOW TO WORK
+- If the task is unclear, use AskUserQuestion before starting. Don't guess.
+- Don't over-explain. Deliver the work.
+- Never delete files anywhere.</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>⑤ The One Prompt — Real Work</h3>
+      <div class="desc">Replace the brackets with your actual task.</div>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>I want to [DESCRIBE YOUR TASK] for [DESCRIBE WHAT SUCCESS LOOKS LIKE].
+
+First, explore my Claude-Work folder. Then, ask me questions using the AskUserQuestion tool. I want to refine the approach with you before you execute.</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>⑥ Extract a Skill</h3>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>Look at the work you just produced in my OUTPUTS folder. Extract the approach you used into a reusable skill file. A skill is a markdown file with:
+
+- A name (e.g., "meeting-synthesis" or "proposal-draft")
+- A description that tells Claude WHEN to use this skill — what trigger phrases or task types should activate it
+- Step-by-step instructions for HOW to do the work — same quality, same format, every time
+- Rules for what to do and what NOT to do
+
+Save the skill file to my TEMPLATES folder. Then explain what you built.</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>⑦ Use Connectors — Meeting Prep</h3>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>Check my Google Calendar for the rest of this week. For each meeting:
+- Tell me who's attending
+- Look at any recent emails from those people in my Gmail
+- Draft a 3-bullet prep note: what's the meeting about, what do they likely need from me, and one question I should ask
+
+Save the prep notes to my OUTPUTS folder.</div>
+    </div>
+
+    <div class="prompt-block">
+      <h3>⑧ Scheduled Task — Monday Briefing</h3>
+      <div class="prompt-code"><button class="copy-btn" onclick="copyPrompt(this)">Copy</button>Create a scheduled task:
+
+Every Monday at 7:00 AM, do the following:
+1. Check my Google Calendar for the week ahead
+2. Check my Gmail for any unread messages from the past 3 days
+3. Look at what's changed in my PROJECTS folder since last week
+4. Write a Monday Morning Briefing that includes: this week's meetings, who I'm meeting with, anything that needs attention from email, and what's active in my projects
+
+Save it to my OUTPUTS folder as a new file each week.</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <a href="/">Parable Labs</a> &bull; monifa@parablelabs.io &bull; parablelabs.io
+</footer>
+
+<script>
+// Password gate — redirect to login if no cookie
+if (document.cookie.indexOf('aop_access=granted') === -1) {
+  window.location.href = 'index.html';
+}
+
+// Copy prompt to clipboard
+function copyPrompt(btn) {
+  var code = btn.parentElement;
+  var text = code.textContent.replace('Copy', '').trim();
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copied';
+    setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+  });
+}
+</script>
+
+</body>
+</html>

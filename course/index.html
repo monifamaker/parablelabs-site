@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Art of the Possible — Parable Labs</title>
+  <meta name="description" content="Course resources for Art of the Possible participants. AI context engineering for senior leaders.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --soil: #1a1612;
+      --mycelium: #2d2822;
+      --bark: #4a3f35;
+      --clay: #8b7355;
+      --sand: #c4a882;
+      --bone: #e8ddd0;
+      --milk: #f5f0e8;
+      --emergence: #6ECB73;
+      --emergence-deep: #3a7a3e;
+      --emergence-dim: rgba(110,203,115,0.12);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+    html { font-size: 18px; scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--soil);
+      color: var(--bone);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.25rem 3rem;
+      background: rgba(26,22,18,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(74,63,53,0.3);
+    }
+    nav .logo {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    nav .links { display: flex; gap: 2.5rem; }
+    nav .links a {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--bone);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav .links a:hover { color: var(--emergence); }
+
+    /* Hero */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('../images/seedlings-emerging-growth-01.jpg') center/cover no-repeat;
+      filter: brightness(0.25) saturate(0.8);
+      z-index: 0;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .hero .label {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--emergence);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: 3.2rem;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--milk);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero .subtitle {
+      font-size: 1.05rem;
+      color: var(--sand);
+      line-height: 1.65;
+      margin-bottom: 3rem;
+    }
+
+    /* Sections */
+    .section-dark {
+      background: var(--mycelium);
+      padding: 5rem 2rem;
+    }
+    .section-deep {
+      background: var(--soil);
+      padding: 5rem 2rem;
+    }
+    .inner { max-width: 680px; margin: 0 auto; }
+
+    .section-dark h2, .section-deep h2 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 400;
+      color: var(--milk);
+      margin-bottom: 1.5rem;
+    }
+    .section-dark p, .section-deep p {
+      color: var(--bone);
+      margin-bottom: 1.25rem;
+    }
+
+    /* Password form */
+    .access-box {
+      background: var(--mycelium);
+      border: 1px solid var(--bark);
+      border-radius: 12px;
+      padding: 3rem;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .access-box h2 {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--milk);
+      margin-bottom: 0.75rem;
+    }
+    .access-box p {
+      color: var(--sand);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    .access-box input {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      background: var(--soil);
+      border: 1px solid var(--bark);
+      border-radius: 8px;
+      color: var(--bone);
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s;
+      margin-bottom: 1rem;
+    }
+    .access-box input:focus { border-color: var(--emergence); }
+    .access-box input::placeholder { color: var(--clay); }
+    .access-box button {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--emergence);
+      color: var(--soil);
+      border: none;
+      border-radius: 8px;
+      font-family: var(--sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .access-box button:hover { background: var(--emergence-deep); color: var(--milk); }
+    .access-box .error {
+      color: #e57373;
+      font-size: 0.85rem;
+      margin-top: 0.75rem;
+      display: none;
+    }
+
+    /* What You'll Learn */
+    .layers {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .layer-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.25rem;
+      padding: 1.5rem;
+      background: rgba(110,203,115,0.05);
+      border-left: 3px solid var(--emergence-deep);
+      border-radius: 0 8px 8px 0;
+    }
+    .layer-num {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--emergence);
+      min-width: 1.5rem;
+    }
+    .layer-card h3 {
+      font-family: var(--sans);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--milk);
+      margin-bottom: 0.3rem;
+    }
+    .layer-card p {
+      font-size: 0.9rem;
+      color: var(--sand);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--bark);
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--clay);
+      letter-spacing: 0.1em;
+    }
+    footer a { color: var(--sand); text-decoration: none; }
+    footer a:hover { color: var(--emergence); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .hero h1 { font-size: 2.2rem; }
+      .hero { padding: 7rem 1.5rem 3rem; min-height: 60vh; }
+      .access-box { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" aria-hidden="true" style="height:28px;width:28px;flex-shrink:0;vertical-align:middle;margin-right:0.5rem"><path d="M60 60 C60 48,72 36,84 36 C96 36,108 48,108 60 C108 84,84 108,60 108 C24 108,0 84,0 48 C0 12,36 -12,72 -12" stroke="#6ECB73" stroke-width="7" fill="none" stroke-linecap="round" opacity="0.9"/><path d="M60 60 C60 54,66 48,72 48 C78 48,84 54,84 60 C84 72,72 84,60 84 C42 84,24 66,24 48 C24 24,48 6,72 6" stroke="#6ECB73" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.5"/><circle cx="60" cy="60" r="6.5" fill="#6ECB73"/></svg>Parable Labs</a>
+  <div class="links">
+    <a href="/#approach">Approach</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="label">AI Mastery Course</div>
+    <h1>Art of the Possible</h1>
+    <p class="subtitle">Context engineering for senior leaders. Five layers that turn AI from a chat tool into a compound intelligence system that knows who you are, how you work, and what you're building.</p>
+  </div>
+</section>
+
+<section class="section-dark">
+  <div class="inner">
+    <h2>Why This Matters</h2>
+    <p>Everyone is selling AI as a productivity tool. Write emails faster. Summarize meetings. It works. It's also a trap.</p>
+    <p>If all you use AI for is doing the same work faster, you're polishing a machine that might not need to exist. So much of knowledge work is <strong>work-shaped work</strong> — the meetings, the formatting, the coordination overhead that exists because humans are slow. AI doesn't just speed that up. In some cases it eliminates the need for it entirely.</p>
+    <p>The interesting question isn't "how do I do my job faster?" It's <em>what becomes possible when the job itself changes?</em></p>
+    <p><strong>Your expertise is the most valuable input in the system.</strong> A graphic designer with twenty years of vocabulary says "add a CRT scanline texture at 15% opacity" and gets exactly what they want. You say "make it look vintage" and get garbage. Same tool. Same model. The variable is precision. AI makes production cheap. The value of expertise holds. We just have to know how to deploy it.</p>
+    <p>That's what this course teaches. Not prompt engineering — context engineering. You give AI a persistent understanding of who you are, what you're working on, and how you think. You set it once. Every conversation starts from that foundation. And the system compounds — like a garden where compost feeds soil, soil feeds plants, and nothing goes to waste.</p>
+    <h2 style="margin-top: 3rem;">Five Layers</h2>
+    <p>Each one grows from the one before it.</p>
+    <div class="layers">
+      <div class="layer-card">
+        <span class="layer-num">01</span>
+        <div>
+          <h3>Context</h3>
+          <p>Claude learns who you are. The soil.</p>
+        </div>
+      </div>
+      <div class="layer-card">
+        <span class="layer-num">02</span>
+        <div>
+          <h3>Instructions</h3>
+          <p>Claude learns how to work for you. The roots.</p>
+        </div>
+      </div>
+      <div class="layer-card">
+        <span class="layer-num">03</span>
+        <div>
+          <h3>Real Work</h3>
+          <p>Claude executes with precision. The first green shoots.</p>
+        </div>
+      </div>
+      <div class="layer-card">
+        <span class="layer-num">04</span>
+        <div>
+          <h3>Connectors</h3>
+          <p>Claude sees across your tools. Branches reaching out.</p>
+        </div>
+      </div>
+      <div class="layer-card">
+        <span class="layer-num">05</span>
+        <div>
+          <h3>Scheduled Tasks</h3>
+          <p>Claude works while you sleep. The fruit.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-deep">
+  <div class="inner">
+    <div class="access-box">
+      <h2>Access Your Resources</h2>
+      <p>Course participants: enter the password from your welcome email.</p>
+      <input type="password" id="pw" placeholder="Course password" autocomplete="off">
+      <button onclick="checkAccess()">Open Resources</button>
+      <p class="error" id="err">That password doesn't match. Check your email or contact monifa@parablelabs.io.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/">Parable Labs</a> &bull; monifa@parablelabs.io &bull; parablelabs.io
+</footer>
+
+<script>
+function checkAccess() {
+  var pw = document.getElementById('pw').value;
+  // Simple hash check — not Fort Knox, just a gate for friends vs. public
+  if (simpleHash(pw) === 'aop2026') {
+    document.cookie = 'aop_access=granted;path=/course;max-age=7776000'; // 90 days
+    window.location.href = 'resources.html';
+  } else {
+    document.getElementById('err').style.display = 'block';
+  }
+}
+function simpleHash(s) {
+  // Plaintext match for now — upgrade to hashed when it matters
+  return s.trim().toLowerCase();
+}
+// No auto-redirect — gateway is always viewable as the landing page
+// Enter key submits
+document.getElementById('pw').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') checkAccess();
+});
+</script>
+
+</body>
+</html>
